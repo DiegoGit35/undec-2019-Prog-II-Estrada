@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 class TestLogin {
 
 	@Test
-	void test() {
-		void test01ContraseniaNoValida_LargoMenorAlMinimo(){
+	void test01ContraseniaNoValida_LargoMenorAlMinimo(){
 		//Arrange
 		String passNoValida01="123456789";
 		String passNoValida02="12345678";
@@ -21,6 +20,7 @@ class TestLogin {
 		String passNoValida09="1";
 		String passNoValida10="";
 		String passNoValida11=null;
+		
 		//Act
 		boolean actual01 = ValidarContrasenia.esLargoValido(passNoValida01);
 		boolean actual02 = ValidarContrasenia.esLargoValido(passNoValida02);
@@ -33,6 +33,7 @@ class TestLogin {
 		boolean actual09 = ValidarContrasenia.esLargoValido(passNoValida09);
 		boolean actual10 = ValidarContrasenia.esLargoValido(passNoValida10);
 		boolean actual11 = ValidarContrasenia.esLargoValido(passNoValida11);
+		
 		//Assert
 		assertEquals(false, actual01);
 		assertEquals(false, actual02);
