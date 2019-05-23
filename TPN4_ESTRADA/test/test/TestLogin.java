@@ -81,4 +81,41 @@ class TestLogin {
 		assertEquals(true, actual08);
 		assertEquals(true, actual09);
 	}
+	@Test
+	void test03ContraseniaValida() {
+	//Arrange
+		String passValida01="1fh6DR#a&";
+		String passValida02="jkh&%2AJF3";
+		String passValida03="984uK$SJFWR%";
+		String passValida04="24KLMd%sj$";
+		String passValida05="pḱ42$SD5%SGd";
+		String passValida06="ñlm3$DSF$5%";
+		String passValida07="G4%dHT5%$ddS";
+		String passValida08="FE3dGR4%&da";
+		String passValida09="FE#$df3532DSs";
+		String passValida10="12erER%&1fg";
+	//Act
+		boolean actual1 = ValidarContrasenia.esValida(passValida1);
+		boolean actual2 = ValidarContrasenia.esValida(passValida2);
+		boolean actual3 = ValidarContrasenia.esValida(passValida3);
+		boolean actual4 = ValidarContrasenia.esValida(passValida4);
+		boolean actual5 = ValidarContrasenia.esValida(passValida5);
+		boolean actual6 = ValidarContrasenia.esValida(passValida6);
+		boolean actual7 = ValidarContrasenia.esValida(passValida7);
+		boolean actual8 = ValidarContrasenia.esValida(passValida8);
+		boolean actual9 = ValidarContrasenia.esValida(passValida9);
+		boolean actual10 = ValidarContrasenia.esValida(passValida10);
+
+	//Assert
+		assertEquals(true, actual1);
+		assertEquals(true, actual2);
+		assertEquals(true, actual3);
+		assertEquals(true, actual4);
+		assertEquals(true, actual5);
+		assertEquals(true, actual6);
+		assertEquals(true, actual7);
+		assertEquals(true, actual8);
+		assertEquals(true, actual9);
+		assertEquals(true, actual10);
+	}
 }
