@@ -263,7 +263,7 @@ class TestDivisibilidad {
 	boolean actual06 = Divisibilidad.esDivisiblePorSiete(42);
 	boolean actual07 = Divisibilidad.esDivisiblePorSiete(49);
 	boolean actual08 = Divisibilidad.esDivisiblePorSiete(56);
-	boolean actual09 = Divisibilidad.esDivisiblePorSiete(63);
+	boolean actual09 = Divisibilidad.esDivisiblePorSiete(2401);
 	//Assert
 	assertEquals(true, actual01);
 	assertEquals(true, actual02);
