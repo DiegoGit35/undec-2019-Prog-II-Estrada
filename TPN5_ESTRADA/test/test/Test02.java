@@ -11,7 +11,7 @@ import dominio.anio_academico;
 class Test02 {
 
 	@Test
-	void test01() {
+	void test1_1() {
 		//Arrange
 		Carrera c01 = new Carrera("Licenciatura en Sistemas", "Lic. Sist.", "071/08");
 		String nombreEsperado = "LICENCIATURA EN SISTEMAS";
@@ -21,7 +21,7 @@ class Test02 {
 		assertEquals(nombreEsperado, actual);
 	}
 	@Test
-	void test02() {
+	void test1_2() {
 		//Arrange
 		Carrera c01 = new Carrera("Licenciatura en Sistemas", "Lic. Sist.", "071/08");
 		String nombreEsperado01 = "Licenciatura en sistemas";
@@ -43,7 +43,7 @@ class Test02 {
 		assertEquals(nombreEsperado04, actual04);
 	}
 	@Test
-	void test03() {
+	void test1_5() {
 		//Arrange
 		Carrera c01 = new Carrera("Licenciatura en Sistemas", "Lic. Sist.", "071/08");
 		String nombreEsperado01 = "LS";
@@ -57,7 +57,7 @@ class Test02 {
 		assertEquals(nombreEsperado02, actual02);
 	}
 	@Test
-	void test3() {
+	void test2_1() {
 		//Arrange 
 		Materia m01= new Materia("Administracion de Empresas", "Ingenieria en Sistemas", anio_academico.I);
 		String MateriaEsperada01="IS - AdmDeEmp";
@@ -75,19 +75,41 @@ class Test02 {
 		assertEquals(MateriaEsperada03, actual03);
 	}
 	@Test
-	void test5() {
+	void test3_2() {
 		//Arrange
-		Carrera c01 = new Carrera("LS", "Lic. Sist.", "071/08");
-		String nombreEsperado01 = "IS"
-				+ "IA"
-				+ "IM";
-		Carrera c02 = new Carrera("Tecnologias del DESARROLLO  DE aplicaciones Web", "Lic. Sist.", "071/08");
-		String nombreEsperado02 = "TDA";
+		Carrera c01 = new Carrera("IS", "Inge. Sist.", "071/08");
+		String nombreEsperado01 = "Ingenieria en Sistemas";
+		Carrera c02 = new Carrera("E", "Enfe.", "071/08");
+		String nombreEsperado02 = "Enfermeria";
 		//Act
-		String actual01 = c01.getNombrePrimeraLetra();
-		String actual02 = c02.getNombrePrimeraLetra();
+		String actual01 = c01.getNombreCarFormato5();
+		String actual02 = c02.getNombreCarFormato5();
 		//AssertassertEquals(nombreEsperado, actual);
 		assertEquals(nombreEsperado01, actual01);
 		assertEquals(nombreEsperado02, actual02);
+	}
+	@Test
+	void test4_1() {
+		//Ingresando solamente una parte del nombre de la materia devolver el listado de todas las
+		//materias que contengan esa parte del texto.
+		//Arrange
+		Materia m01= new Materia("Administracacion de", "Ingenieria en Sistemas", anio_academico.I);
+		String MateriaEsperada01="Administracion de Empresas";
+		Materia m02= new Materia("Electro", "Ingenieria en Sistemas", anio_academico.II);
+		String MateriaEsperada02="Electronica Digital"
+				+ "Electrotecnia";
+		Materia m03= new Materia("Sist", "Licenciatura en Sistemas", anio_academico.II);
+		String MateriaEsperada03="Sistema Operativos I"
+				+ "Sistemas Operativos II"
+				+ "Sistemas I"
+				+ "Sistemas II";
+		//Act 
+		String actual01 = m01.getNombreBusqueda();
+		String actual02 = m01.getNombreBusqueda();
+		String actual03 = m01.getNombreBusqueda();
+		//Assert
+		assertEquals(MateriaEsperada01, actual01);
+		assertEquals(MateriaEsperada02, actual02);
+		assertEquals(MateriaEsperada03, actual03);
 	}
 }
